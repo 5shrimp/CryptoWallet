@@ -11,7 +11,7 @@ import SnapKit
 
 class RefreshView: UIView {
     
-    var delegate: RefreshViewDelegate?
+    weak var delegate: RefreshViewDelegate?
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -77,7 +77,7 @@ extension RefreshView {
     }
 }
 
-protocol RefreshViewDelegate {
+protocol RefreshViewDelegate: AnyObject {
     func refreshButtonTapped()
     func exitButtonTapped()
 }

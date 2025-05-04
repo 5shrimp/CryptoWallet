@@ -95,7 +95,7 @@ class LoginVC: UIViewController, LoginViewProtocol {
 // MARK: - UI
 
 private extension LoginVC {
-    func setupViews() {
+    private func setupViews() {
         view.backgroundColor = UIColor(red: 243/255.0, green: 245/255.0, blue: 246/255.0, alpha: 1.0)
         view.addSubview(imageView)
         view.addSubview(stackView)
@@ -104,7 +104,7 @@ private extension LoginVC {
         stackView.addArrangedSubview(loginButton)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.centerX.equalToSuperview()
@@ -115,7 +115,7 @@ private extension LoginVC {
         }
     }
 
-    func registerForKeyboardNotifications() {
+    private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -135,7 +135,7 @@ private extension LoginVC {
         }
     }
 
-    func setupHideKeyboardOnTap() {
+    private func setupHideKeyboardOnTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)

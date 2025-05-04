@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class TrendingBackView: UIView {
-    var delegate: TrendingBackViewDelegate?
+    weak var delegate: TrendingBackViewDelegate?
     private var currencyList: [Currency] = []
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -51,7 +51,7 @@ class TrendingBackView: UIView {
     }
 }
 
-protocol TrendingBackViewDelegate {
+protocol TrendingBackViewDelegate: AnyObject {
     func didTapCell(currency: Currency)
 }
 
