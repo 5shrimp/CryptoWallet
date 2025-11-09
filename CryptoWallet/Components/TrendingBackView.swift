@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TrendingBackView: UIView {
+final class TrendingBackView: UIView {
     weak var delegate: TrendingBackViewDelegate?
     private var currencyList: [Currency] = []
     private let titleLabel: UILabel = {
@@ -21,7 +21,7 @@ class TrendingBackView: UIView {
     private let sortingButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Search icon"), for: .normal)
-        button.addTarget(self, action: #selector(sortingButtonTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(sortingButtonTapped), for: .touchUpInside)
         button.isSelected = false
         return button
     }()
