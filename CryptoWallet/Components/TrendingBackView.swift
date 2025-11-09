@@ -55,19 +55,19 @@ protocol TrendingBackViewDelegate: AnyObject {
     func didTapCell(currency: Currency)
 }
 
-extension TrendingBackView {
-    private func setupStyle() {
+private extension TrendingBackView {
+    func setupStyle() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 12
     }
     
-    private func setupViews() {
+    func setupViews() {
         self.addSubview(titleLabel)
         self.addSubview(sortingButton)
         self.addSubview(tableView)
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.left.top.equalToSuperview().offset(30)
         }
