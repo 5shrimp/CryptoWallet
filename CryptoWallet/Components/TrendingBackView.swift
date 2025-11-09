@@ -55,7 +55,7 @@ protocol TrendingBackViewDelegate: AnyObject {
     func didTapCell(currency: Currency)
 }
 
-extension TrendingBackView {
+private extension TrendingBackView {
     func setupStyle() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 12
